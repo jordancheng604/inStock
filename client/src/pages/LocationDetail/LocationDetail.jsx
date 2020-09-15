@@ -18,7 +18,7 @@ export default class LocationDetail extends Component {
     } = this.props;
 
     axios
-      .get(`http://localhost:8080/warehouses/${params.id}`)
+      .get(`https://instock2020.herokuapp.com/warehouses/${params.id}`)
       .then((res) => {
         this.setState({
           currentWarehouse: res.data.currentWarehouse[0],
