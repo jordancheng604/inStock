@@ -14,5 +14,5 @@ app.use("/inventory", inventory_routes);
 // warehouse route
 app.use("/warehouses", warehouses_routes);
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => console.log(`Listening on port ${port}`));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
