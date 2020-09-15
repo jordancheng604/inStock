@@ -10,7 +10,7 @@ export default class InventoryDetail extends Component {
   };
 
   componentDidMount() {
-    Axios.get(`http://localhost:8080${this.props.match.url}`).then(
+    Axios.get(`https://instock2020.herokuapp.com/${this.props.match.url}`).then(
       (success) => {
         this.setState({
           item: success.data[0],

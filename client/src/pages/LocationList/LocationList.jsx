@@ -52,7 +52,7 @@ export default class LocationList extends Component {
     }
 
     axios
-      .post("http://localhost:8080/warehouses", {
+      .post("https://instock2020.herokuapp.com/warehouses", {
         newWarehouse: {
           locationName: e.target.locationName.value,
           locationAddress: e.target.locationAddress.value,
@@ -77,7 +77,7 @@ export default class LocationList extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:8080/warehouses`)
+      .get(`https://instock2020.herokuapp.com/warehouses`)
       .then((res) => {
         this.setState({ warehouse: res.data });
       })
@@ -93,7 +93,7 @@ export default class LocationList extends Component {
     const formData = new FormData(event.target);
     console.log(formData.get('locationName'), 'is location name')
     console.log(formData.get('locationAddress'), 'is location address')
-    axios.post("http://localhost:8080/warehouses", {
+    axios.post("https://instock2020.herokuapp.com/warehouses", {
       name: formData.get("locationName"),
       
       address:{

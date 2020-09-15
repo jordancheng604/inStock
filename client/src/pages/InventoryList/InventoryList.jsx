@@ -26,7 +26,7 @@ export default class InventoryList extends Component {
       return console.error("Please fill out all form fields");
     } else {
       axios
-        .post("http://localhost:8080/inventory", {
+        .post("https://instock2020.herokuapp.com/inventory", {
           name: e.target.name.value,
           description: e.target.description.value,
           quantity: e.target.quantity.value,
@@ -74,14 +74,14 @@ export default class InventoryList extends Component {
 
   handleRemove = (id) => {
     axios
-      .delete(`http://localhost:8080/inventory/${id}`)
+      .delete(`https://instock2020.herokuapp.com/inventory/${id}`)
       .then((res) => this.setState({ inventory: res.data }))
       .catch((err) => console.log("handle remove error"));
   };
 
   getInventory = () => {
     axios
-      .get("http://localhost:8080/inventory")
+      .get("https://instock2020.herokuapp.com/inventory")
       .then((res) => {
         this.setState({ inventory: res.data });
       })
